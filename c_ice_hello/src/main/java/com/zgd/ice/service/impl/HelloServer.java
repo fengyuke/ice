@@ -26,7 +26,7 @@ public class HelloServer {
     	ObjectAdapter adapter = ic.createObjectAdapterWithEndpoints("HelloServiceAdapter", "default -p 1888");
     	// 将服务的具体实现类servant交给这个适配器
     	HelloI servant = new HelloI();
-    	// "HelloIce"--服务接口在ice中注册名,转成唯一标识identity
+    	// "HelloIce"--服务接口在ice中注册名(这个注册名可以随意定义,服务端与客户端保持一致就好),转成唯一标识identity
     	Identity id = Util.stringToIdentity("HelloIce");
     	//将服务与唯一标识绑定关系交给适配器
     	adapter.add(servant, id);
